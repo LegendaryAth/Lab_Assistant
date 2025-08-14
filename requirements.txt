@@ -2,3 +2,4 @@ python-dotenv
 flask
 werkzeug
 flask_cors
+requests

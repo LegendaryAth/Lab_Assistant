@@ -1,5 +1,5 @@
 // ===== Config =====
-const API_URL = "http://localhost:5000/api/identify"; // update if deployed
+const API_URL = "/api/identify"; // This is the only line changed
 
 
 // ===== Helpers =====
@@ -33,7 +33,7 @@ function enableTilt(){
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
       const tiltX = (y - 0.5) * -6;
-      const tiltY = (x - 0.5) *  6;
+      const tiltY = (x - 0.5) * 6;
       card.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
     });
     card.addEventListener("mouseleave", ()=> card.style.transform = "");

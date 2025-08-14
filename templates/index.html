@@ -4,12 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🧪 Lab Equipment Vision — CurricuLens</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated BG Particles -->
   <div class="bg">
     <div class="orb o1"></div>
     <div class="orb o2"></div>
@@ -23,7 +22,7 @@
     </div>
     <nav class="links">
       <a href="#" class="nav-link active">Detector</a>
-      <a href="/LD2/about.html" class="nav-link">About</a>
+      <a href="{{ url_for('about') }}" class="nav-link">About</a>
     </nav>
     <button id="themeToggle" aria-label="Toggle theme">☾</button>
   </header>
@@ -38,7 +37,6 @@
       </div>
     </section>
 
-    <!-- Camera area (hidden until opened) -->
     <section id="cameraCard" class="card camera-card tilt hidden" data-tilt>
       <div class="camera-row">
         <video id="cameraVideo" autoplay playsinline></video>
@@ -51,7 +49,6 @@
       <div class="camera-hint">Tip: on mobiles allow camera access and switch to the back camera for better results.</div>
     </section>
 
-    <!-- Dropzone -->
     <section id="dropzone" class="dropzone card tilt" data-tilt>
       <div class="dz-icon">⬆</div>
       <div class="dz-text">
@@ -59,12 +56,11 @@
       </div>
     </section>
 
-    <!-- Results grid -->
     <section>
       <div id="results" class="grid"></div>
     </section>
   </main>
 
-  <script src="app.js" defer></script>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
 </body>
 </html>

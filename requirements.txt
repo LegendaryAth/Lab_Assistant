@@ -1,0 +1,6 @@
+os
+base64
+requests
+python-dotenv
+flask
+werkzeug

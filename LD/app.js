@@ -1,5 +1,6 @@
 // ===== Config =====
-const API_URL = "/api/identify"; // update if deployed
+const API_URL = "http://localhost:5000/api/identify"; // update if deployed
+
 
 // ===== Helpers =====
 const $ = (q, ctx=document) => ctx.querySelector(q);

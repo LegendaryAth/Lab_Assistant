@@ -1,6 +1,0 @@
-requests
-python-dotenv
-flask
-werkzeug
-flask_cors
-gunicorn

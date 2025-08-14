@@ -68,7 +68,7 @@ def identify_lab_equipment_from_bytes(image_bytes, mime_type="image/jpeg"):
 
     return {"name": name, "description": description}
 
-@app.post("/api/identify")
+@app.route("/")
 def identify_api():
     """
     Accepts multipart/form-data with one or more files using field name 'images'.

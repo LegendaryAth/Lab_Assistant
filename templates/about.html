@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About CurricuLens</title>
-  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+
+  <img src="{{ url_for('static', filename='arav.jpg') }}" alt="Arav" class="team-photo">
+...
+  <img src="{{ url_for('static', filename='atharva.jpg') }}" alt="Atharva" class="team-photo">
+
+<script src="{{ url_for('static', filename='about.js') }}"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>

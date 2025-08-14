@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🧪 Lab Equipment Vision — CurricuLens</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated BG Particles -->
+  <div class="bg">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <header class="nav">
+    <div class="brand">
+      <div class="logo-blob"></div>
+      <span>CurricuLens</span>
+    </div>
+    <nav class="links">
+      <a href="#" class="nav-link active">Detector</a>
+      <a href="/LD2/about.html" class="nav-link">About</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme">☾</button>
+  </header>
+
+  <main class="wrap">
+    <section class="hero card tilt" data-tilt>
+      <h1><span class="grad">Lab Equipment Detector</span></h1>
+      <div class="cta-row">
+        <label for="fileInput" class="btn primary">Upload Images</label>
+        <input id="fileInput" type="file" accept="image/*" multiple hidden />
+        <button id="openCamera" class="btn ghost">Open Camera</button>
+      </div>
+    </section>
+
+    <!-- Camera area (hidden until opened) -->
+    <section id="cameraCard" class="card camera-card tilt hidden" data-tilt>
+      <div class="camera-row">
+        <video id="cameraVideo" autoplay playsinline></video>
+        <canvas id="cameraCanvas" class="hidden"></canvas>
+      </div>
+      <div class="camera-controls">
+        <button id="captureBtn" class="btn primary">Capture & Analyze</button>
+        <button id="closeCamera" class="btn ghost">Close Camera</button>
+      </div>
+      <div class="camera-hint">Tip: on mobiles allow camera access and switch to the back camera for better results.</div>
+    </section>
+
+    <!-- Dropzone -->
+    <section id="dropzone" class="dropzone card tilt" data-tilt>
+      <div class="dz-icon">⬆</div>
+      <div class="dz-text">
+        <strong>Drag & drop</strong> images here, or click <span class="underline" id="dzClick">browse</span>.
+      </div>
+    </section>
+
+    <!-- Results grid -->
+    <section>
+      <div id="results" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

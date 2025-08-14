@@ -1,0 +1,259 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f8ff, #c1e1ff);
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 100px 20px 60px 20px;
+    background: linear-gradient(135deg, #6fc3ff, #89d1ff);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.05);
+    top: -50%;
+    left: -50%;
+    transform: rotate(25deg);
+    animation: rotateBg 20s linear infinite;
+}
+
+@keyframes rotateBg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.2em;
+    color: #007acc;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #007acc;
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+section p {
+    font-size: 1.15em;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Features */
+.features ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.features li {
+    background: #ffffffcc;
+    padding: 25px 30px;
+    border-radius: 15px;
+    font-weight: 500;
+    text-align: center;
+    flex: 1 1 220px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.features li:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    background: #d0ebff;
+}
+
+/* Team Section */
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.member-card {
+    background: #ffffffdd;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    text-align: center;
+    padding: 80px 25px 25px 25px; /* top padding to fit floating photo */
+    transition: all 0.4s ease;
+    width: 260px;
+    position: relative;
+    overflow: visible; /* changed from hidden to visible */
+}
+
+/* photo wrapper floating above the card */
+.member-card {
+    background: #ffffffdd;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    padding: 100px 25px 25px 25px; /* more top padding for bigger photo */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    width: 280px; /* slightly wider card */
+    position: relative;
+    overflow: visible;
+    perspective: 1000px; /* add perspective for 3D effect */
+}
+
+.photo-wrapper {
+    position: absolute;
+    top: -85px; /* float higher for bigger photo */
+    left: 50%;
+    transform: translateX(-50%) rotateX(0deg) rotateY(0deg);
+    width: 160px; /* bigger photo */
+    height: 160px; 
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6fc3ff, #89d1ff);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.photo-wrapper:hover {
+    transform: translateX(-50%) rotateX(10deg) rotateY(10deg) scale(1.1);
+    box-shadow: 0 20px 50px rgba(111,195,255,0.6);
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #c1e1ff;
+    transition: transform 0.5s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-15px) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #007acc;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Add floating bubbles in the background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 2%, transparent 2%) repeat;
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Make sections have subtle glass panels */
+section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Add fade-in animation for sections */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Feature icons (optional, will need HTML update) */
+.features li::before {
+    content: '✓';
+    display: block;
+    font-size: 1.5em;
+    color: #007acc;
+    margin-bottom: 10px;
+}
